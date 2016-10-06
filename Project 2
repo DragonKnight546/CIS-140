@@ -1,0 +1,10 @@
+mkdir sandbox
+mkdir sandbox/css
+mkdir sandbox/images
+mkdir sandbox/scripts
+touch sandbox/index.html
+cp /var/ww/images/logo1.png sandbox/images/logo1.png
+cp /var/ww/images/logo2.png sandbox/images/logo2.png
+ls -alR sandbox >>sandbox/web-listing
+chmod 744 sandbox
+find /var/ww/image -name "*.png" > sandbox/avail-images
