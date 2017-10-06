@@ -1,0 +1,23 @@
+mkdir -p test/red/magent
+mkdir -p test/blue/cyan
+echo "script_dir=$(dirname $0)" > test/blue/blue.bsh
+echo "echo 'This file is in ' $script_dir '.'" >> test/blue/blue.bsh
+chmod +x test/blue/blue.bsh
+chmod 711 test/blue/blue.bsh
+echo 'find test -name "*.bsh" >> test/scripts' >> test/blue/blue.bsh
+cp test/blue/blue.bsh test/blue/cyan/cyan.bsh
+cp test/blue/blue.bsh test/red/red.bsh
+cp test/blue/blue.bsh test/red/magenta/magenta.bsh
+mkdir test/blue/next
+mkdir test/blue/cyan/next
+mkdir test/red/next
+mkdir test/red/magenta/next
+cp test/blue/blue.bsh test/blue/next/bluenext.bsh
+cp test/blue/cyan/cyan.bsh test/blue/cyan/next/cyannext.bsh
+cp test/red/red.bsh test/red/next/rednext.bsh
+cp test/red/magenta/magenta.bsh test/red/magenta/next/magentanext.bsh
+echo 'ls -alR >> test/contents' > test/recursive_ls.bsh
+chmod +x test/recursive_ls.bsh
+chmod 711 test/recursive_ls.bsh
+grep -rn "folder" test > test/foundText
+rm -rf test/red test/blue
