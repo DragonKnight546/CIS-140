@@ -1,0 +1,4 @@
+find sandbox -name ".tmp" -delete
+find sandbox -name ".html" -exec grep "oncology" '{}' \; -print >> oncology-pages
+find sandbox -name ".html" -exec grep "radiology" '{}' \; -print >> radiology-pages
+diff oncology-pages radiology-pages >> Project3-Output
