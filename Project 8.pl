@@ -98,12 +98,13 @@ sub removeUser {
 }
 
 sub populateDeletedUsers {
-     my $counter = 0;
      my $size = @deletedUsers;
-     if ($counter == 1){
-          $deletedUsers[$size][$counter] = $user;
-     } else {
-          $deletedUsers[$size][$counter] = $homeDir + ".zip";
+     for (my $i = 0; $i < COLUMNS; $i++)
+          if ($i == 0 ) {
+	  	$deletedUsers[$size][$i] = $user;
+	  } else {
+          	$deletedUsers[$size][$i] = $homeDir + ".zip";
+	  }
      }
 }
 
