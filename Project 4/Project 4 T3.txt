@@ -1,0 +1,3 @@
+sed -e 's/\-/ /' PhoneList.csv > PhoneList.csv
+sed -e 's/[0-9]\{3\}/(&)/' PhoneList.csv > PhoneList.csv
+sed -e 's/\@gmail\.com/\@starhealth\.org/' PhoneList.csv > PhoneList.csv

@@ -1,0 +1,7 @@
+links
+kill -TSTP 1
+(sleep 60 ; sleep 60 ; ls -alR / > flist &)
+fg 1
+kill -TSTP 1
+kill 1
+fg 2
