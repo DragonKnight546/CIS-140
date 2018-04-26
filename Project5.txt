@@ -1,0 +1,94 @@
+#!/bin/bash
+
+##Assignment: Project 5
+##Author: Zachary Keating (keating.zack@gmail.com)
+##Version: 10.19.2017.01
+##Purpose: Create a menu system
+
+declare -i selection
+
+main() {
+	setSelection
+	while [ "$selection" -ne 0 ]
+	do
+		printMenu
+		setSelection
+		runSelection
+	done
+	exit0;
+}
+
+setSelection(){
+	if [ -n "$selection" ]
+	then
+		selection=-1
+	else
+		read -p "Please make a selection: " selection
+		sleep 1
+	fi
+}
+
+printMenu(){
+	clear
+	echo -e "Welecome to the machine."
+	echo -e "________________________"
+	echo -e "1.) Editing Commands"
+	echo -e "2.) Games"
+	echo -e "3.) User Administration"
+	echo -e "4.) Process Commands"
+	echo -e "5.) System Commands"
+	echo -e "6.) Network Commands"
+	echo -e '0.) MAIN MENU\n'
+}
+
+runSelection(){
+	if [ "$selection" -eq 0 ]
+	then
+		:#Menu close afterwards
+	elif [ "$selection" -eq 1 ]
+	then
+		openEditCom
+	elif [ "$selection" -eq 2 ]
+	then
+		openGames
+	elif [ "$selection" -eq 3 ]
+	then
+		openUserAdmin
+	elif [ "$selection" -eq 4 ]
+	then
+		openProcCom
+	elif [ "$selection" -eq 5 ]
+	then
+		openSysCom
+	else
+		openNetCom
+	fi
+}
+
+openEditCom(){
+	echo -e "Editing Commands coming soon."
+	sleep 2
+}
+
+openGames(){
+	echo -e "Games coming soon."
+	sleep 2
+}
+openUserAdmin(){
+	echo -e "User Administration coming soon."
+	sleep 2
+}
+openProcCom(){
+	echo -e "Process Commands coming soon."
+	sleep 2
+}
+openSysCom(){
+	echo -e "System Commands coming soon."
+	sleep 2
+}
+openNetCom(){
+	echo -e "Network Commands coming soon."
+	sleep 2
+}
+
+main
